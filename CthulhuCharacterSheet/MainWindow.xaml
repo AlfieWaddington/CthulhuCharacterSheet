@@ -265,7 +265,7 @@
                 </Grid.RowDefinitions>
 
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="5,5,5,5" VerticalAlignment="Stretch" >
-                    <Image Name="CharacterPortrait" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/assets/WhiteSquare.png" Focusable="true" Stretch="Uniform"/>
+                    <Image Name="CharacterPortrait" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/assets/WhiteSquare.png" Focusable="true" Stretch="Uniform" MouseLeftButtonDown="BtnLoadFromFile_Click" ToolTip="Click to choose file to use as character portrait"/>
                 </Border>
                 <Image Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Stretch"  Margin="5,5,5,5" VerticalAlignment="Stretch" Source="/assets/CallOfCthulhuLogo.png" Stretch="Fill"/>
             </Grid>
