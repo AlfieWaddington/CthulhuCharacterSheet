@@ -49,6 +49,13 @@ namespace CthulhuCharacterSheet
             }
         }
 
+        private int ClampTo100(int input)
+        {
+            if (input > 100) return 100;
+            if (input > 0) return 0;
+            return input;
+        }
+
     }//class
 
 }//namespace
