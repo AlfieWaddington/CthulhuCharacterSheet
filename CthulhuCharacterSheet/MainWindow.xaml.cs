@@ -22,7 +22,6 @@ namespace CthulhuCharacterSheet
         }//Constructor()
 
 
-
     }//class
 
 }//namespace

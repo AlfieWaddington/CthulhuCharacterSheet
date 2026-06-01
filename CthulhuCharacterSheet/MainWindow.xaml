@@ -5,30 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuCharacterSheet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
-    
-    <Grid ShowGridLines="true">
+        Title="MainWindow" Height="900" Width="1600">
+
+    <Window.Background>
+        <ImageBrush ImageSource="/assets/PaperBG.jpg" />
+    </Window.Background>
+
+    <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="295*"/>
+            <RowDefinition Height="74*" />
+            <RowDefinition Height="295*"/>
+
+            <RowDefinition Height="147*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Margin="0,0,0,7"  ShowGridLines="true">
+        <Grid Margin="0,0,0,7"  ShowGridLines="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Grid ShowGridLines="true">
+            <Grid ShowGridLines="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
-                <Grid RenderTransformOrigin="0.489,0.474"  ShowGridLines="true">
+                <Grid RenderTransformOrigin="0.489,0.474"  ShowGridLines="False">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -36,7 +41,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="1" ShowGridLines="false">
+                    <Grid Grid.Row="1" ShowGridLines="False">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="3*"/>
                             <RowDefinition Height="3*"/>
@@ -49,27 +54,27 @@
 
                         <DockPanel Grid.Column="0" Grid.Row="0" LastChildFill="true" Margin="0,0,5,0">
                             <Label Grid.Column="0" Content="Name" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                            <TextBox Name="Name" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
                         </DockPanel>
                         <DockPanel Grid.Column="1" Grid.Row="0" LastChildFill="true" Margin="0,0,5,0">
                             <Label Grid.Column="1" Content="Birthplace" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                            <TextBox Name="Birthplace" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
                         </DockPanel>
                         <DockPanel Grid.Column="2" Grid.Row="0" LastChildFill="true" Margin="0,0,5,0">
                             <Label Grid.Column="2" Content="Pronoun" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                            <TextBox Name="Pronoun" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
                         </DockPanel>
                         <DockPanel Grid.Column="0" Grid.Row="1" LastChildFill="true" Margin="0,0,5,0">
                             <Label Grid.Column="0" Content="Occupation" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                            <TextBox Name="Occupation" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
                         </DockPanel>
                         <DockPanel Grid.Column="1" Grid.Row="1" LastChildFill="true" Margin="0,0,5,0">
                             <Label Grid.Column="1" Content="Residence" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                            <TextBox Name="Residence" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
                         </DockPanel>
                         <DockPanel Grid.Column="2" Grid.Row="2" LastChildFill="true" Margin="0,0,5,0">
                             <Label Grid.Column="2" Content="Age" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                            <TextBox Name="Age" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
                         </DockPanel>
 
 
@@ -81,6 +86,156 @@
 
 
                 </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="19*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="Characteristics" Content="Characteristics" Grid.Column="0" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Bottom" >
+                        <Label.LayoutTransform>
+                            <RotateTransform Angle="270" />
+                        </Label.LayoutTransform>
+                    </Label>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+
+
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Name="Str" Content="Str" Grid.Column="0" Grid.Row="1"/>
+                            <Label Name="Con" Content="Con" Grid.Column="0" Grid.Row="2" />
+                            <Label Name="Dex" Content="Dex" Grid.Column="0" Grid.Row="3" />
+                            <Label Name="Int" Content="Int" Grid.Column="0" Grid.Row="4"/>
+
+                            <Label Name="Reg1" Content="Reg" Grid.Column="1" Grid.Row="0"/>
+                            <Label Name="Half1" Content="Half" Grid.Column="2" Grid.Row="0" />
+                            <Label Name="Fifth1" Content="Fifth" Grid.Column="3" Grid.Row="0" />
+
+                            <TextBox Name="StrReg" Text=""  Grid.Column="1" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="StrHalf" Text=""  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="StrFifth" Text=""  Grid.Column="3" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="ConReg" Text=""  Grid.Column="1" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="ConHalf" Text=""  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="ConFifth" Text=""  Grid.Column="3" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="DexReg" Text=""  Grid.Column="1" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="DexHalf" Text=""  Grid.Column="2" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="DexFifth" Text=""  Grid.Column="3" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="IntReg" Text=""  Grid.Column="1" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="IntHalf" Text=""  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="IntFifth" Text=""  Grid.Column="3" Grid.Row="4" Margin="0,1,0,1"/>
+
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Name="Siz" Content="Siz" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right"/>
+                            <Label Name="Pow" Content="Pow" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Right"/>
+                            <Label Name="App" Content="App" Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Right"/>
+                            <Label Name="Edu" Content="Edu" Grid.Column="0" Grid.Row="4"  HorizontalAlignment="Right"/>
+
+                            <Label Name="Reg2" Content="Reg" Grid.Column="1" Grid.Row="0"/>
+                            <Label Name="Half2" Content="Half" Grid.Column="2" Grid.Row="0" />
+                            <Label Name="Fifth2" Content="Fifth" Grid.Column="3" Grid.Row="0" />
+
+                            <TextBox Name="SizReg" Text=""  Grid.Column="1" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="SizHalf" Text=""  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="SizFifth" Text=""  Grid.Column="3" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="PowReg" Text=""  Grid.Column="1" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="PowHalf" Text=""  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="PowFifth" Text=""  Grid.Column="3" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="AppReg" Text=""  Grid.Column="1" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="AppHalf" Text=""  Grid.Column="2" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="AppFifth" Text=""  Grid.Column="3" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="EduReg" Text=""  Grid.Column="1" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="EduHalf" Text=""  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="EduFifth" Text=""  Grid.Column="3" Grid.Row="4" Margin="0,1,0,1"/>
+
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="3*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Name="HitPoints" Content="Hit Points" Grid.Column="0" Grid.Row="1"/>
+                            <Label Name="MagicPoints" Content="Magic Points" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            <Label Name="Luck" Content="Luck" Grid.Column="0" Grid.Row="4" />
+                            <Label Name="Sanity" Content="Sanity" Grid.Column="0" Grid.Row="5"/>
+
+
+                            <Label Name="Maximum" Content="Maximum" Grid.Column="1" Grid.Row="0" />
+                            <Label Name="Current" Content="Current" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                            <Label Name="Starting" Content="Starting" Grid.Column="1" Grid.Row="3" Margin="0,1,0,0" VerticalAlignment="Stretch"/>
+
+                            <Label Name="Current2" Content="Current" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+
+                            <TextBox Name="MaxHP" Text=""  Grid.Column="1" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="CurrentHP" Text=""  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1" Grid.ColumnSpan="2"/>
+
+                            <TextBox Name="MaxMP" Text=""  Grid.Column="1" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="CurrentMP" Text=""  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1" Grid.ColumnSpan="2"/>
+
+                            <TextBox Name="StartingLuck" Text=""  Grid.Column="1" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="CurrentLuck" Text=""  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1" Grid.ColumnSpan="2"/>
+
+                            <TextBox Name="StartingSanity" Text=""  Grid.Column="1" Grid.Row="5" Margin="0,1,0,1"/>
+                            <TextBox Name="CurrentSanity" Text=""  Grid.Column="2" Grid.Row="5" Margin="0,1,0,1"/>
+                            <StackPanel Grid.Column="4" Grid.Row="5" Orientation="Horizontal" >
+                                <Label Name="InsanityLabel" Content="Insane?"/>
+                                <CheckBox Name="Insane" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                            </StackPanel>
+
+
+
+
+                        </Grid>
+
+
+                    </Grid>
+
+                </Grid>
 
             </Grid>
             <Grid Grid.Column="1">
@@ -89,13 +244,927 @@
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Stretch">
-                    <Image HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/assets/WhiteSquare.png" Focusable="true"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="5,5,5,5" VerticalAlignment="Stretch" >
+                    <Image Name="CharacterPortrait" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/assets/WhiteSquare.png" Focusable="true" Stretch="Uniform"/>
                 </Border>
                 <Image Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Stretch"  Margin="5,5,5,5" VerticalAlignment="Stretch" Source="/assets/CallOfCthulhuLogo.png" Stretch="Fill"/>
             </Grid>
 
         </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="1">
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" LastChildFill="True">
+                    <Label Content="Max Sanity" />
+                    <TextBox Name="MaxSanity" Text="" DockPanel.Dock="Right" MinWidth="20"/>
+                </DockPanel>
+            </Viewbox>
+            <Viewbox Grid.Column="2">
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Temporary Insanity" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <CheckBox Name="TempInsanity" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Viewbox>
+            <Viewbox  Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Indefinite Insanity" />
+                    <CheckBox Name="InfInsanity" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Viewbox>
+            <Viewbox Grid.Column="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Major Wound" />
+                    <CheckBox Name="MajWound" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Viewbox>
+            <Viewbox  Grid.Column="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Unconcious" />
+                    <CheckBox Name="Unconcious" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Viewbox>
+            <Viewbox Grid.Column="6">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <Label Content="Dying" />
+                    <CheckBox Name="Dying" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Center"/>
+
+                </StackPanel>
+            </Viewbox>
+
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="39*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="0">
+                <Viewbox.LayoutTransform>
+                    <RotateTransform Angle="270" />
+                </Viewbox.LayoutTransform>
+                <Label Content="Skills"/>
+            </Viewbox>
+
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Reg" Grid.Column="1" HorizontalAlignment="Center"/>
+                        <Label Content="Half" Grid.Column="2" HorizontalAlignment="Center"/>
+                        <Label Content="Fifth" Grid.Column="3" HorizontalAlignment="Center"/>
+                        <Label Content="Reg" Grid.Column="5" HorizontalAlignment="Center"/>
+                        <Label Content="Half" Grid.Column="6" HorizontalAlignment="Center"/>
+                        <Label Content="Fifth" Grid.Column="7" HorizontalAlignment="Center"/>
+                        <Label Content="Reg" Grid.Column="9" HorizontalAlignment="Center"/>
+                        <Label Content="Half" Grid.Column="10" HorizontalAlignment="Center"/>
+                        <Label Content="Fifth" Grid.Column="11" HorizontalAlignment="Center"/>
+                    </Grid>
+
+                    <ScrollViewer Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="AccountingProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Accounting (05%)" Grid.Column="1" />
+                                    <TextBox Name="AccountingReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="AccountingHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="AccountingFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Name="AnthropologyProf" Content="Anthropology (01%)" Grid.Column="1" />
+                                    <TextBox Name="AnthropologyReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="AnthropologyHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="AnthropologyFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="AppraiseProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Appraise (05%)" Grid.Column="1" />
+                                    <TextBox Name="AppraiseReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="AppraiseHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="AppraiseFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ArcheologyProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Archeology (01%)" Grid.Column="1" />
+                                    <TextBox Name="ArcheologyReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ArcheologyHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ArcheologyFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ArtProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="ArtCraft" Text="Art/Craft (05%)" Grid.Column="1" />
+                                    <TextBox Name="ArtCraftReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ArtCraftHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ArtCraftFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="CharmProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Charm (15%)" Grid.Column="1" />
+                                    <TextBox Name="CharmReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="CharmHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="CharmFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ClimbProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Climb (20%)" Grid.Column="1" />
+                                    <TextBox Name="ClimbReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ClimbHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ClimbFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Content="Credit Rating (00%)" Grid.Column="1" />
+                                    <TextBox Name="CreditReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="CreditHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="CreditFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Content="Cthulhu Mythos (00%)" Grid.Column="1" />
+                                    <TextBox Name="CthulhuReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="CthulhuHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="CthulhuFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="DisguiseProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Diguise (05%)" Grid.Column="1" />
+                                    <TextBox Name="DisguiseReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="DisguiseHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="DisguiseFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="DodgeProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Dodge (half DEX%)" Grid.Column="1" />
+                                    <TextBox Name="DodgeReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="DodgeHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="DodgeFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="DriveProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Drive Auto (20%)" Grid.Column="1" />
+                                    <TextBox Name="DriveAutoReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="DriveAutoHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="DriveAutoFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ElecProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Elec. Repair (10%)" Grid.Column="1" />
+                                    <TextBox Name="ElecReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ElecHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ElecFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Name="FastTalkProf" Content="Fast Talk (05%)" Grid.Column="1" />
+                                    <TextBox Name="FastTalkReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="FastTalkHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="FastTalkFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="BrawlProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Fighting (Brawl) (25%)" Grid.Column="1" />
+                                    <TextBox Name="BrawlReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="BrawlHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="BrawlFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="FightingProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="Fighting" Text="Fighting" Grid.Column="1" />
+                                    <TextBox Name="FightingReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="FightingHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="FightingFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="HandgunProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Firearms (Handgun) (20%)" Grid.Column="1" />
+                                    <TextBox Name="HandgunReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="HandgunHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="HandgunFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="RifleProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Firearms (Rifle) (25%)" Grid.Column="1" />
+                                    <TextBox Name="RifleReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="RifleHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="RifleFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="FirearmsProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name ="Firearms" Text="Firearms" Grid.Column="1" />
+                                    <TextBox Name="FirearmsReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="FirearmsHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="FirearmsFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="FirstAidProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="First Aid (30%)" Grid.Column="1" />
+                                    <TextBox Name="FirstAidReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="FirstAidHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="FirstAidFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="HistoryProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="History (05%)" Grid.Column="1" />
+                                    <TextBox Name="HistoryReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="HistoryHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="HistoryFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="IntimidateProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Intimidate (15%)" Grid.Column="1" />
+                                    <TextBox Name="IntimidateReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="IntimidateHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="IntimidateFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="JumpProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Jump (20%)" Grid.Column="1" />
+                                    <TextBox Name="JumpReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="JumpHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="JumpFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="OtherLanguageProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="LanguageOther" Text="Language (Other) (01%)" Grid.Column="1" />
+                                    <TextBox Name="OtherLanguageReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="OtherLanguageHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="OtherLanguageFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="OwnLanguageProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="LanguageOwn" Text="Language (Own) (EDU)" Grid.Column="1" />
+                                    <TextBox Name="OwnLanguageReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="OwnLanguageHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="OwnLanguageFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="LawProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Law (05%)" Grid.Column="1" />
+                                    <TextBox Name="LawReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="LawHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="LawFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="LibraryProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Library Use (20%)" Grid.Column="1" />
+                                    <TextBox Name="LibraryReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="LibraryHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="LibraryFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ListenProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Listen (20%)" Grid.Column="1" />
+                                    <TextBox Name="ListenReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ListenHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ListenFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="LocksmithProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Locksmith (01%)" Grid.Column="1" />
+                                    <TextBox Name="LocksmithReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="LocksmithHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="LocksmithFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="MechProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Mech. Repair (10%)" Grid.Column="1" />
+                                    <TextBox Name="MechReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="MechHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="MechFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="MedicineProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Medicine (01%)" Grid.Column="1" />
+                                    <TextBox Name="MedicineReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="MedicineHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="MedicineFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="NatureProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Natural World (10%)" Grid.Column="1" />
+                                    <TextBox Name="NatureReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="NatureHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="NatureFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="NavigateProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Navigate (10%)" Grid.Column="1" />
+                                    <TextBox Name="NavigateReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="NavigateHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="NavigateFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="OccultProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Occult (05%)" Grid.Column="1" />
+                                    <TextBox Name="OccultReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="OccultHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="OccultFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="PersuadeProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Persuade (10%)" Grid.Column="1" />
+                                    <TextBox Name="PersuadeReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="PersuadeHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="PersuadeFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="PilotProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="Pilot" Text="Pilot (01%)" Grid.Column="1" />
+                                    <TextBox Name="PilotReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="PilotHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="PilotFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="PsychoanalysisProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Psychoanalysis (01%)" Grid.Column="1" />
+                                    <TextBox Name="PsychoanalysisReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="PsychoanalysisHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="PsychoanalysisFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="PsychologyProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Psychology (10%)" Grid.Column="1" />
+                                    <TextBox Name="PsychologyReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="PsychologyHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="PsychologyFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="RideProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Ride (05%)" Grid.Column="1" />
+                                    <TextBox Name="RideReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="RideHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="RideFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ScienceProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="Science" Text="Science (01%)" Grid.Column="1" />
+                                    <TextBox Name="ScienceReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ScienceHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ScienceFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="HandProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Sleight Of Hand (10%)" Grid.Column="1" />
+                                    <TextBox Name="HandReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="HandHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="handFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="SpotProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Spot Hidden (25%)" Grid.Column="1" />
+                                    <TextBox Name="SpotReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="SpotHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="SpotFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="StealthProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Stealth (20%)" Grid.Column="1" />
+                                    <TextBox Name="StealthReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="StealthHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="StealthFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="SurvivalProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="Survival" Text="Survival (10%)" Grid.Column="1" />
+                                    <TextBox Name="SurvivalReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="SurvivalHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="SurvivalFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="SwimProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Swim (20%)" Grid.Column="1" />
+                                    <TextBox Name="SwimReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="SwimHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="SwimFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="ThrowProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Throw (20%)" Grid.Column="1" />
+                                    <TextBox Name="ThrowReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="ThrowHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="ThrowFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="TrackProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label Content="Track (10%)" Grid.Column="1" />
+                                    <TextBox Name="TrackReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="TrackHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="TrackFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="CustomProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox Name="Custom" Text="Custom" Grid.Column="1" />
+                                    <TextBox Name="CustomReg" Text="" Grid.Column="2" />
+                                    <TextBox Name="CustomHalf" Text="" Grid.Column="3" />
+                                    <TextBox Name="CustomFifth" Text="" Grid.Column="4" />
+                                </Grid>
+
+                            </StackPanel>
+
+                        </Grid>
+
+
+                    </ScrollViewer>
+
+
+
+
+                </Grid>
+            </Border>
+
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="39*"/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Grid.Column="0">
+                <Viewbox.LayoutTransform>
+                    <RotateTransform Angle="270" />
+                </Viewbox.LayoutTransform>
+                <Label Content="Combat"/>
+            </Viewbox>
+
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" >
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="301*"/>
+                        <ColumnDefinition Width="89*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Viewbox>
+                            <Label Content="Move" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Viewbox>
+
+                        <Viewbox Grid.Row="1">
+                            <Label Content="Build" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                        </Viewbox>
+
+                        <Viewbox Grid.Row="2">
+                            <Label Content="Dodge" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+                        </Viewbox>
+
+                        <Viewbox Grid.Row="3">
+                            <Label Content="Damage Bonus" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Viewbox>
+
+                        <TextBox Name="Move" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="Build" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="Dodge" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="DamageBonus" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Grid.Column="3" HorizontalAlignment="Stretch" Margin="0,0,10,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="0,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                    </Grid>
+
+
+                </Grid>
+            </Border>
+            
+        </Grid>
+        
+
 
     </Grid>
 </Window>
