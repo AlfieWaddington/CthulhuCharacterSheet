@@ -4,8 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuCharacterSheet"
-        mc:Ignorable="d"
+        
+    
+    mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1600">
+
+    <Window.Resources>
+        <local:HalfConverter x:Key="HalfConverter"/>
+        <local:FifthConverter x:Key="FifthConverter" />
+        <local:DamageBonusConverter x:Key="DamageBonusConverter" />
+    </Window.Resources>
+    
 
     <Window.Background>
         <ImageBrush ImageSource="/assets/PaperBG.jpg" />
@@ -130,17 +139,17 @@
                             <Label Name="Fifth1" Content="Fifth" Grid.Column="3" Grid.Row="0" />
 
                             <TextBox Name="StrReg" Text=""  Grid.Column="1" Grid.Row="1" Margin="0,1,0,1"/>
-                            <TextBox Name="StrHalf" Text=""  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1"/>
-                            <TextBox Name="StrFifth" Text=""  Grid.Column="3" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="StrHalf" Text="{Binding ElementName=StrReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="StrFifth" Text="{Binding ElementName=StrReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="1" Margin="0,1,0,1"/>
                             <TextBox Name="ConReg" Text=""  Grid.Column="1" Grid.Row="2" Margin="0,1,0,1"/>
-                            <TextBox Name="ConHalf" Text=""  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1"/>
-                            <TextBox Name="ConFifth" Text=""  Grid.Column="3" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="ConHalf" Text="{Binding ElementName=ConReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="ConFifth" Text="{Binding ElementName=ConReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="2" Margin="0,1,0,1"/>
                             <TextBox Name="DexReg" Text=""  Grid.Column="1" Grid.Row="3" Margin="0,1,0,1"/>
-                            <TextBox Name="DexHalf" Text=""  Grid.Column="2" Grid.Row="3" Margin="0,1,0,1"/>
-                            <TextBox Name="DexFifth" Text=""  Grid.Column="3" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="DexHalf" Text="{Binding ElementName=DexReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="DexFifth" Text="{Binding ElementName=DexReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="3" Margin="0,1,0,1"/>
                             <TextBox Name="IntReg" Text=""  Grid.Column="1" Grid.Row="4" Margin="0,1,0,1"/>
-                            <TextBox Name="IntHalf" Text=""  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1"/>
-                            <TextBox Name="IntFifth" Text=""  Grid.Column="3" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="IntHalf" Text="{Binding ElementName=IntReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="IntFifth" Text="{Binding ElementName=IntReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="4" Margin="0,1,0,1"/>
 
                         </Grid>
 
@@ -169,17 +178,17 @@
                             <Label Name="Fifth2" Content="Fifth" Grid.Column="3" Grid.Row="0" />
 
                             <TextBox Name="SizReg" Text=""  Grid.Column="1" Grid.Row="1" Margin="0,1,0,1"/>
-                            <TextBox Name="SizHalf" Text=""  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1"/>
-                            <TextBox Name="SizFifth" Text=""  Grid.Column="3" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="SizHalf" Text="{Binding ElementName=SizReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="1" Margin="0,1,0,1"/>
+                            <TextBox Name="SizFifth" Text="{Binding ElementName=SizReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="1" Margin="0,1,0,1"/>
                             <TextBox Name="PowReg" Text=""  Grid.Column="1" Grid.Row="2" Margin="0,1,0,1"/>
-                            <TextBox Name="PowHalf" Text=""  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1"/>
-                            <TextBox Name="PowFifth" Text=""  Grid.Column="3" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="PowHalf" Text="{Binding ElementName=PowReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="2" Margin="0,1,0,1"/>
+                            <TextBox Name="PowFifth" Text="{Binding ElementName=PowReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="2" Margin="0,1,0,1"/>
                             <TextBox Name="AppReg" Text=""  Grid.Column="1" Grid.Row="3" Margin="0,1,0,1"/>
-                            <TextBox Name="AppHalf" Text=""  Grid.Column="2" Grid.Row="3" Margin="0,1,0,1"/>
-                            <TextBox Name="AppFifth" Text=""  Grid.Column="3" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="AppHalf" Text="{Binding ElementName=AppReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="3" Margin="0,1,0,1"/>
+                            <TextBox Name="AppFifth" Text="{Binding ElementName=AppReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="3" Margin="0,1,0,1"/>
                             <TextBox Name="EduReg" Text=""  Grid.Column="1" Grid.Row="4" Margin="0,1,0,1"/>
-                            <TextBox Name="EduHalf" Text=""  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1"/>
-                            <TextBox Name="EduFifth" Text=""  Grid.Column="3" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="EduHalf" Text="{Binding ElementName=EduReg,Path=Text,Converter={StaticResource HalfConverter}}"  Grid.Column="2" Grid.Row="4" Margin="0,1,0,1"/>
+                            <TextBox Name="EduFifth" Text="{Binding ElementName=EduReg,Path=Text,Converter={StaticResource FifthConverter}}"  Grid.Column="3" Grid.Row="4" Margin="0,1,0,1"/>
 
                         </Grid>
 
@@ -371,8 +380,8 @@
                                     <CheckBox Name="AccountingProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Accounting (05%)" Grid.Column="1" />
                                     <TextBox Name="AccountingReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="AccountingHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="AccountingFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="AccountingHalf" Text="{Binding ElementName=AccountingReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="AccountingFifth" Text="{Binding ElementName=AccountingReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
 
@@ -387,8 +396,8 @@
                                     <CheckBox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Name="AnthropologyProf" Content="Anthropology (01%)" Grid.Column="1" />
                                     <TextBox Name="AnthropologyReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="AnthropologyHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="AnthropologyFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="AnthropologyHalf" Text="{Binding ElementName=AnthropologyReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="AnthropologyFifth" Text="{Binding ElementName=AnthropologyReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -402,8 +411,8 @@
                                     <CheckBox Name="AppraiseProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Appraise (05%)" Grid.Column="1" />
                                     <TextBox Name="AppraiseReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="AppraiseHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="AppraiseFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="AppraiseHalf" Text="{Binding ElementName=AppraiseReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="AppraiseFifth" Text="{Binding ElementName=AppraiseReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -417,8 +426,8 @@
                                     <CheckBox Name="ArcheologyProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Archeology (01%)" Grid.Column="1" />
                                     <TextBox Name="ArcheologyReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ArcheologyHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ArcheologyFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ArcheologyHalf" Text="{Binding ElementName=ArcheologyReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ArcheologyFifth" Text="{Binding ElementName=ArcheologyReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -432,8 +441,8 @@
                                     <CheckBox Name="ArtProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="ArtCraft" Text="Art/Craft (05%)" Grid.Column="1" />
                                     <TextBox Name="ArtCraftReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ArtCraftHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ArtCraftFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ArtCraftHalf" Text="{Binding ElementName=ArtCraftReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ArtCraftFifth" Text="{Binding ElementName=ArtCraftReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -447,8 +456,8 @@
                                     <CheckBox Name="CharmProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Charm (15%)" Grid.Column="1" />
                                     <TextBox Name="CharmReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="CharmHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="CharmFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="CharmHalf" Text="{Binding ElementName=CharmReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="CharmFifth" Text="{Binding ElementName=CharmReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -462,8 +471,8 @@
                                     <CheckBox Name="ClimbProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Climb (20%)" Grid.Column="1" />
                                     <TextBox Name="ClimbReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ClimbHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ClimbFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ClimbHalf" Text="{Binding ElementName=CharmReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ClimbFifth" Text="{Binding ElementName=CharmReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -477,8 +486,8 @@
 
                                     <Label Content="Credit Rating (00%)" Grid.Column="1" />
                                     <TextBox Name="CreditReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="CreditHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="CreditFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="CreditHalf" Text="{Binding ElementName=CreditReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="CreditFifth" Text="{Binding ElementName=CreditReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -492,8 +501,8 @@
 
                                     <Label Content="Cthulhu Mythos (00%)" Grid.Column="1" />
                                     <TextBox Name="CthulhuReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="CthulhuHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="CthulhuFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="CthulhuHalf" Text="{Binding ElementName=CthulhuReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="CthulhuFifth" Text="{Binding ElementName=CthulhuReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -507,8 +516,8 @@
                                     <CheckBox Name="DisguiseProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Diguise (05%)" Grid.Column="1" />
                                     <TextBox Name="DisguiseReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="DisguiseHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="DisguiseFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="DisguiseHalf" Text="{Binding ElementName=DisguiseReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="DisguiseFifth" Text="{Binding ElementName=DisguiseReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -522,8 +531,8 @@
                                     <CheckBox Name="DodgeProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Dodge (half DEX%)" Grid.Column="1" />
                                     <TextBox Name="DodgeReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="DodgeHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="DodgeFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="DodgeHalf" Text="{Binding ElementName=DodgeReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="DodgeFifth" Text="{Binding ElementName=DodgeReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -537,8 +546,8 @@
                                     <CheckBox Name="DriveProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Drive Auto (20%)" Grid.Column="1" />
                                     <TextBox Name="DriveAutoReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="DriveAutoHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="DriveAutoFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="DriveAutoHalf" Text="{Binding ElementName=DriveAutoReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="DriveAutoFifth" Text="{Binding ElementName=DriveAutoReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -552,8 +561,8 @@
                                     <CheckBox Name="ElecProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Elec. Repair (10%)" Grid.Column="1" />
                                     <TextBox Name="ElecReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ElecHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ElecFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ElecHalf" Text="{Binding ElementName=ElecReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ElecFifth" Text="{Binding ElementName=ElecReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -567,8 +576,8 @@
                                     <CheckBox Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Name="FastTalkProf" Content="Fast Talk (05%)" Grid.Column="1" />
                                     <TextBox Name="FastTalkReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="FastTalkHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="FastTalkFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="FastTalkHalf" Text="{Binding ElementName=FastTalkReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="FastTalkFifth" Text="{Binding ElementName=FastTalkReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -582,8 +591,8 @@
                                     <CheckBox Name="BrawlProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Fighting (Brawl) (25%)" Grid.Column="1" />
                                     <TextBox Name="BrawlReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="BrawlHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="BrawlFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="BrawlHalf" Text="{Binding ElementName=BrawlReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="BrawlFifth" Text="{Binding ElementName=BrawlReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -597,8 +606,8 @@
                                     <CheckBox Name="FightingProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="Fighting" Text="Fighting" Grid.Column="1" />
                                     <TextBox Name="FightingReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="FightingHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="FightingFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="FightingHalf" Text="{Binding ElementName=FightingReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="FightingFifth" Text="{Binding ElementName=FightingReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -612,8 +621,8 @@
                                     <CheckBox Name="HandgunProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Firearms (Handgun) (20%)" Grid.Column="1" />
                                     <TextBox Name="HandgunReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="HandgunHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="HandgunFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="HandgunHalf" Text="{Binding ElementName=HandgunReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="HandgunFifth" Text="{Binding ElementName=HandgunReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                             </StackPanel>
@@ -630,8 +639,8 @@
                                     <CheckBox Name="RifleProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Firearms (Rifle) (25%)" Grid.Column="1" />
                                     <TextBox Name="RifleReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="RifleHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="RifleFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="RifleHalf" Text="{Binding ElementName=ConReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="RifleFifth" Text="{Binding ElementName=RifleReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -645,8 +654,8 @@
                                     <CheckBox Name="FirearmsProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name ="Firearms" Text="Firearms" Grid.Column="1" />
                                     <TextBox Name="FirearmsReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="FirearmsHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="FirearmsFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="FirearmsHalf" Text="{Binding ElementName=FirearmsReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="FirearmsFifth" Text="{Binding ElementName=FirearmsReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -661,7 +670,7 @@
                                     <Label Content="First Aid (30%)" Grid.Column="1" />
                                     <TextBox Name="FirstAidReg" Text="" Grid.Column="2" />
                                     <TextBox Name="FirstAidHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="FirstAidFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="FirstAidFifth" Text="{Binding ElementName=FirstAidReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -675,8 +684,8 @@
                                     <CheckBox Name="HistoryProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="History (05%)" Grid.Column="1" />
                                     <TextBox Name="HistoryReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="HistoryHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="HistoryFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="HistoryHalf" Text="{Binding ElementName=HistoryReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="HistoryFifth" Text="{Binding ElementName=HistoryReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -690,8 +699,8 @@
                                     <CheckBox Name="IntimidateProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Intimidate (15%)" Grid.Column="1" />
                                     <TextBox Name="IntimidateReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="IntimidateHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="IntimidateFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="IntimidateHalf" Text="{Binding ElementName=IntimidateReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="IntimidateFifth" Text="{Binding ElementName=IntimidateReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -705,8 +714,8 @@
                                     <CheckBox Name="JumpProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Jump (20%)" Grid.Column="1" />
                                     <TextBox Name="JumpReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="JumpHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="JumpFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="JumpHalf" Text="{Binding ElementName=JumpReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="JumpFifth" Text="{Binding ElementName=JumpReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -720,8 +729,8 @@
                                     <CheckBox Name="OtherLanguageProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="LanguageOther" Text="Language (Other) (01%)" Grid.Column="1" />
                                     <TextBox Name="OtherLanguageReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="OtherLanguageHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="OtherLanguageFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="OtherLanguageHalf" Text="{Binding ElementName=OtherLanguageReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="OtherLanguageFifth" Text="{Binding ElementName=OtherLanguageReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -735,8 +744,8 @@
                                     <CheckBox Name="OwnLanguageProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="LanguageOwn" Text="Language (Own) (EDU)" Grid.Column="1" />
                                     <TextBox Name="OwnLanguageReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="OwnLanguageHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="OwnLanguageFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="OwnLanguageHalf" Text="{Binding ElementName=OwnLanguageReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="OwnLanguageFifth" Text="{Binding ElementName=OwnLanguageReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -750,8 +759,8 @@
                                     <CheckBox Name="LawProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Law (05%)" Grid.Column="1" />
                                     <TextBox Name="LawReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="LawHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="LawFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="LawHalf" Text="{Binding ElementName=LawReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="LawFifth" Text="{Binding ElementName=LawReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -765,8 +774,8 @@
                                     <CheckBox Name="LibraryProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Library Use (20%)" Grid.Column="1" />
                                     <TextBox Name="LibraryReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="LibraryHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="LibraryFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="LibraryHalf" Text="{Binding ElementName=LibraryReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="LibraryFifth" Text="{Binding ElementName=LibraryReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -780,8 +789,8 @@
                                     <CheckBox Name="ListenProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Listen (20%)" Grid.Column="1" />
                                     <TextBox Name="ListenReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ListenHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ListenFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ListenHalf" Text="{Binding ElementName=ListenReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ListenFifth" Text="{Binding ElementName=ListenReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -795,8 +804,8 @@
                                     <CheckBox Name="LocksmithProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Locksmith (01%)" Grid.Column="1" />
                                     <TextBox Name="LocksmithReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="LocksmithHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="LocksmithFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="LocksmithHalf" Text="{Binding ElementName=LocksmithingReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="LocksmithFifth" Text="{Binding ElementName=LocksmithReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -810,8 +819,8 @@
                                     <CheckBox Name="MechProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Mech. Repair (10%)" Grid.Column="1" />
                                     <TextBox Name="MechReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="MechHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="MechFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="MechHalf" Text="{Binding ElementName=MechReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="MechFifth" Text="{Binding ElementName=MechReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -825,8 +834,8 @@
                                     <CheckBox Name="MedicineProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Medicine (01%)" Grid.Column="1" />
                                     <TextBox Name="MedicineReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="MedicineHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="MedicineFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="MedicineHalf" Text="{Binding ElementName=MedicineReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="MedicineFifth" Text="{Binding ElementName=MedicineReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -840,8 +849,8 @@
                                     <CheckBox Name="NatureProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Natural World (10%)" Grid.Column="1" />
                                     <TextBox Name="NatureReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="NatureHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="NatureFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="NatureHalf" Text="{Binding ElementName=NatureReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="NatureFifth" Text="{Binding ElementName=NatureReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -855,8 +864,8 @@
                                     <CheckBox Name="NavigateProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Navigate (10%)" Grid.Column="1" />
                                     <TextBox Name="NavigateReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="NavigateHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="NavigateFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="NavigateHalf" Text="{Binding ElementName=NavigateReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="NavigateFifth" Text="{Binding ElementName=NavigateReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -870,8 +879,8 @@
                                     <CheckBox Name="OccultProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Occult (05%)" Grid.Column="1" />
                                     <TextBox Name="OccultReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="OccultHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="OccultFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="OccultHalf" Text="{Binding ElementName=OccultReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="OccultFifth" Text="{Binding ElementName=OccultReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                             </StackPanel>
@@ -888,8 +897,8 @@
                                     <CheckBox Name="PersuadeProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Persuade (10%)" Grid.Column="1" />
                                     <TextBox Name="PersuadeReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="PersuadeHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="PersuadeFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="PersuadeHalf" Text="{Binding ElementName=PersuadeReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="PersuadeFifth" Text="{Binding ElementName=PersuadeReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -903,8 +912,8 @@
                                     <CheckBox Name="PilotProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="Pilot" Text="Pilot (01%)" Grid.Column="1" />
                                     <TextBox Name="PilotReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="PilotHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="PilotFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="PilotHalf" Text="{Binding ElementName=PilotReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="PilotFifth" Text="{Binding ElementName=PilotReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -918,8 +927,8 @@
                                     <CheckBox Name="PsychoanalysisProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Psychoanalysis (01%)" Grid.Column="1" />
                                     <TextBox Name="PsychoanalysisReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="PsychoanalysisHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="PsychoanalysisFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="PsychoanalysisHalf" Text="{Binding ElementName=PsychoanalysisReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="PsychoanalysisFifth" Text="{Binding ElementName=PsychoanalysisReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -933,8 +942,8 @@
                                     <CheckBox Name="PsychologyProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Psychology (10%)" Grid.Column="1" />
                                     <TextBox Name="PsychologyReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="PsychologyHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="PsychologyFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="PsychologyHalf" Text="{Binding ElementName=PsychologyReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="PsychologyFifth" Text="{Binding ElementName=PsychologyReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -948,8 +957,8 @@
                                     <CheckBox Name="RideProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Ride (05%)" Grid.Column="1" />
                                     <TextBox Name="RideReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="RideHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="RideFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="RideHalf" Text="{Binding ElementName=RideReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="RideFifth" Text="{Binding ElementName=RideReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -963,8 +972,8 @@
                                     <CheckBox Name="ScienceProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="Science" Text="Science (01%)" Grid.Column="1" />
                                     <TextBox Name="ScienceReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ScienceHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ScienceFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ScienceHalf" Text="{Binding ElementName=ScienceReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ScienceFifth" Text="{Binding ElementName=ScienceReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -978,8 +987,8 @@
                                     <CheckBox Name="HandProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Sleight Of Hand (10%)" Grid.Column="1" />
                                     <TextBox Name="HandReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="HandHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="handFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="HandHalf" Text="{Binding ElementName=HandReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="HandFifth" Text="{Binding ElementName=HandReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -993,8 +1002,8 @@
                                     <CheckBox Name="SpotProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Spot Hidden (25%)" Grid.Column="1" />
                                     <TextBox Name="SpotReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="SpotHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="SpotFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="SpotHalf" Text="{Binding ElementName=SpotReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="SpotFifth" Text="{Binding ElementName=SpotReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -1008,8 +1017,8 @@
                                     <CheckBox Name="StealthProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Stealth (20%)" Grid.Column="1" />
                                     <TextBox Name="StealthReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="StealthHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="StealthFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="StealthHalf" Text="{Binding ElementName=StealthReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="StealthFifth" Text="{Binding ElementName=StealthReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -1023,8 +1032,8 @@
                                     <CheckBox Name="SurvivalProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="Survival" Text="Survival (10%)" Grid.Column="1" />
                                     <TextBox Name="SurvivalReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="SurvivalHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="SurvivalFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="SurvivalHalf" Text="{Binding ElementName=SurvivalReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="SurvivalFifth" Text="{Binding ElementName=SurvivalReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -1038,8 +1047,8 @@
                                     <CheckBox Name="SwimProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Swim (20%)" Grid.Column="1" />
                                     <TextBox Name="SwimReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="SwimHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="SwimFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="SwimHalf" Text="{Binding ElementName=SwimReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="SwimFifth" Text="{Binding ElementName=SwimReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -1053,8 +1062,8 @@
                                     <CheckBox Name="ThrowProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Throw (20%)" Grid.Column="1" />
                                     <TextBox Name="ThrowReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="ThrowHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="ThrowFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="ThrowHalf" Text="{Binding ElementName=ThrowReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="ThrowFifth" Text="{Binding ElementName=ThrowReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -1068,8 +1077,8 @@
                                     <CheckBox Name="TrackProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <Label Content="Track (10%)" Grid.Column="1" />
                                     <TextBox Name="TrackReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="TrackHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="TrackFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="TrackHalf" Text="{Binding ElementName=TrackReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="TrackFifth" Text="{Binding ElementName=TrackReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                                 <Grid>
@@ -1083,8 +1092,8 @@
                                     <CheckBox Name="CustomProf" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox Name="Custom" Text="Custom" Grid.Column="1" />
                                     <TextBox Name="CustomReg" Text="" Grid.Column="2" />
-                                    <TextBox Name="CustomHalf" Text="" Grid.Column="3" />
-                                    <TextBox Name="CustomFifth" Text="" Grid.Column="4" />
+                                    <TextBox Name="CustomHalf" Text="{Binding ElementName=CustomReg,Path=Text,Converter={StaticResource HalfConverter}}" Grid.Column="3" />
+                                    <TextBox Name="CustomFifth" Text="{Binding ElementName=CustomReg,Path=Text,Converter={StaticResource FifthConverter}}" Grid.Column="4" />
                                 </Grid>
 
                             </StackPanel>
@@ -1152,10 +1161,18 @@
 
                         <TextBox Name="Move" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
                         <TextBox Name="Build" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
-                        <TextBox Name="Dodge" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
-                        <TextBox Name="DamageBonus" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
-                        <TextBox Grid.Column="3" HorizontalAlignment="Stretch" Margin="0,0,10,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
-                        <TextBox Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="0,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="Dodge" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=DodgeReg,Path=Text}" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="DodgeHalfCombat" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=Dodge,Path=Text,Converter={StaticResource HalfConverter}}" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="DodgeFifthCombat" Grid.Column="3" HorizontalAlignment="Stretch" Margin="0,0,10,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=Dodge,Path=Text,Converter={StaticResource FifthConverter}}" VerticalAlignment="Center" Width="120"/>
+                        <TextBox Name="DamageBonus" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"  Margin="0,0,0,0" Grid.Row="3" TextWrapping="Wrap" >
+                            <TextBox.Text>
+                                <MultiBinding Converter="{StaticResource DamageBonusConverter}">
+                                    <Binding ElementName="StrReg" Path="Text" />
+                                    <Binding ElementName="SizeReg" Path="Text" />
+                                </MultiBinding>
+                            </TextBox.Text>
+                        </TextBox>
+
                     </Grid>
 
 

@@ -9,11 +9,11 @@ namespace CthulhuCharacterSheet
     internal class Character
     {
 
-        private String Name = "";
-        private String Birthplace = "";
-        private String Pronoun = "";
-        private String Occupation = "";
-        private String Residence = "";
+        private string Name = "";
+        private string Birthplace = "";
+        private string Pronoun = "";
+        private string Occupation = "";
+        private string Residence = "";
         private int Age = 0;
 
         private int Str = 0;

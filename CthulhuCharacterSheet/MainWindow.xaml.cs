@@ -19,7 +19,11 @@ namespace CthulhuCharacterSheet
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowViewModel vm = new MainWindowViewModel();
+            DataContext = vm;
         }//Constructor()
+
+
 
 
     }//class
