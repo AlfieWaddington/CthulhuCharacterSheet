@@ -8,7 +8,7 @@ using System.Windows.Data;
 
 namespace CthulhuCharacterSheet
 {
-    class FifthConverter : IValueConverter
+    class MaxSanityConverter : IValueConverter
     {
         public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -19,11 +19,11 @@ namespace CthulhuCharacterSheet
             var stringform = value as string;
             if (stringform == "") return "";
             int stat = 0;
-            if (int.TryParse(stringform, out stat)) ;
+            int.TryParse(stringform, out stat);
 
 
 
-            return (stat / 5);
+            return (99 - stat);
             throw new NotImplementedException();
         }
 
@@ -35,11 +35,12 @@ namespace CthulhuCharacterSheet
             var stringform = value as string;
             if (stringform == "") return "";
             int stat = 0;
-            if (int.TryParse(stringform, out stat)) ;
+            int.TryParse(stringform, out stat);
 
 
 
-            return (stat * 5);
+            return (99-stat);
+       
             throw new NotImplementedException();
         }
     }

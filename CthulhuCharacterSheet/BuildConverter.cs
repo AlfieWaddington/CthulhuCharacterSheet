@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,7 @@ using System.Windows.Data;
 
 namespace CthulhuCharacterSheet
 {
-    class DamageBonusConverter : IMultiValueConverter
+    class BuildConverter : IMultiValueConverter
     {
         public object? Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -23,16 +22,16 @@ namespace CthulhuCharacterSheet
             if (stringform2 == "") return "";
             int stat1 = 0;
             int stat2 = 0;
-            if (int.TryParse(stringform1, out stat1)) ;
-            if (int.TryParse(stringform2, out stat2)) ;
+            int.TryParse(stringform1, out stat1) ;
+            int.TryParse(stringform2, out stat2) ;
 
             int sum = stat1 + stat2;
 
             if (2 <= sum && sum <= 64) return "-2";
             if (65 <= sum && sum <= 84) return "-1";
-            if (85 <= sum && sum <= 124) return ("None");
-            if (125 <= sum && sum <= 164) return ("+1d4");
-            if (165 <= sum && sum <= 204) return ("+1d6");
+            if (85 <= sum && sum <= 124) return "0";
+            if (125 <= sum && sum <= 164) return "1";
+            if (165 <= sum && sum <= 204) return "2";
 
 
             throw new NotImplementedException();

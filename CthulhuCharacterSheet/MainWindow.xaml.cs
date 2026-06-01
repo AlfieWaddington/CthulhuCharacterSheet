@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,7 +24,19 @@ namespace CthulhuCharacterSheet
             DataContext = vm;
         }//Constructor()
 
+        private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+        private static bool IsTextAllowed(string text)
+        {
+            return _regex.IsMatch(text);
+        }
 
+        protected void PreviewTextInputHandle(object sender, TextCompositionEventArgs e)
+        {
+            if (IsTextAllowed(e.Text))
+            {
+                e.Handled = true;
+            }
+        }
 
 
     }//class
